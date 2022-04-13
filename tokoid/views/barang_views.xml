@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- model.name tree view -->
+    <record id="toko_barang_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Barang</field>
+        <field name="model">toko.barang</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                 <field name="tipebarang"/>
+                <field name="harga"/>
+                <field name="jumlah"/>            
+            </tree>
+        </field>
+    </record>
+    <!-- model.name action window -->
+    <record id="toko_barang_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis  Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">toko.barang</field>
+        <field name="view_mode">tree,form</field>
+
+
+
+        </record>
+      
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+       id="toko_akomodasi_menu_act" 
+        name="toko id"
+        parent="toko_akomodasi_menu_categ" 
+        action="toko_barang_action"
+        sequence="10"/>
+
+</odoo>
